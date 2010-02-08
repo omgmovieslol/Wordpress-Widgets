@@ -1,0 +1,78 @@
+
+<html>
+<head>
+<title>reddit WordPress Widget Readme</title>
+</head>
+
+<body>
+
+<h2>reddit WordPress Widget Readme</h2>
+<ul>
+<li>Author - James Wilson</li>
+<li>URL - <a href="http://nothingoutoftheordinary.com/2007/06/01/wordpress-reddit-widget/">http://nothingoutoftheordinary.com/2007/06/01/wordpress-reddit-widget/</a></li>
+<li>License - <a href="http://www.gnu.org/copyleft/gpl.html">GPL</a></li>
+</ul>
+<h3>Requirements</h3>
+<ul>
+<li>WordPress 2.2 or 2.0.x/2.1.x with <a href="http://automattic.com/code/widgets/">WordPress Widgets</a></li>
+<li>PHP 4.3.0 or greater (needed for function <a href="http://www.php.net/manual/en/function.file-get-contents.php">file_get_contents</a>)</li>
+</ul>
+
+<h3>Installation</h3>
+<ol>
+<li>Download <a href="http://nothingoutoftheordinary.com/wp-content/uploads/2007/06/reddit.zip">reddit.zip</a> (<a href="http://nothingoutoftheordinary.com/wp-content/uploads/2007/06/reddit.tar.gz">gz</a>)</li>
+<li>Extract and upload reddit.php to the plugins/ directory</li>
+<li>Enable reddit Widget in the Plugin admin panel</li>
+<li>In widget admin panel, place reddit in the sidebar, and edit it to enter your username</li>
+</ol>
+
+<h3>Features</h3>
+<ul>
+<li>Displays your latest liked items (on reddit.com)</li>
+<li>Completely customizable display</li>
+<li>Caching for large traffic sites</li>
+</ul>
+
+<h3>Formatting</h3>
+There are 3 parts needed to format the output.
+<br />
+The first part, called items start in the admin panel, is the first part of the widget after the title. For the default formatting, this is just <code>&lt;ul&gt;</code>.
+<br />
+The second part, called items end, is the ending of the widget. By default, this is:
+<code>&lt;/ul&gt;
+&lt;a href="%profile%" style="float:right;"&gt;%username%&lt;/a&gt;
+</code>
+<br />
+The third part is what is called for each item. By default, this is:
+<code>&lt;li style="list-style-type: none;"&gt;&lt;a href="%link%"&gt;%title%&lt;/a&gt; (&lt;a href="%more%"&gt;more&lt;/a&gt;)&lt;/li&gt;</code>
+<br /><br />
+The premise of calling each value is this:
+<ol>
+<li>start</li>
+<li>item</li>
+<li>item</li>
+<li>...</li>
+<li>item</li>
+<li>end</li>
+</ol>
+
+The formatting for items is:
+<ul>
+<li><b>%title%</b> - Title of the item</li>
+<li><b>%link%</b> - Link to the item</li>
+<li><b>%desc%</b> - Description of the item - Just [link] [more] links</li>
+<li><b>%date%</b> - Date the item was submitted (ISO)</li>
+<li><b>%more%</b> - More link - The link to the comments</li>
+<li><b>%number%</b> - The number of the current item</li>
+</ul>
+
+The formatting for start and end is:
+<ul>
+<li><b>%username%</b> - Your username</li>
+<li><b>%profile%</b> - Link to your profile</li>
+<li><b>%rss%</b> - Link to your profile's RSS feed</li>
+<li><b>%count%</b> - Number of items shown</li>
+</ul>
+
+</body>
+</html>

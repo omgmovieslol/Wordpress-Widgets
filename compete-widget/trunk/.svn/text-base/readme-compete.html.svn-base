@@ -1,0 +1,59 @@
+
+<html>
+<head>
+<title>Compete WordPress Widget Readme</title>
+</head>
+
+<body>
+
+<h2>Compete WordPress Widget Readme</h2>
+<ul>
+<li>Author - James Wilson</li>
+<li>URL - <a href="http://nothingoutoftheordinary.com/2007/05/24/compete-wordpress-widget/">http://nothingoutoftheordinary.com/2007/05/24/compete-wordpress-widget/</a></li>
+<li>License - <a href="http://www.gnu.org/copyleft/gpl.html">GPL</a></li>
+</ul>
+
+<h3>Requirements</h3>
+<ul>
+<li>WordPress 2.2 or 2.0.x/2.1.x with <a href="http://automattic.com/code/widgets/">WordPress Widgets</a></li>
+<li>PHP 4.3.0 or greater (needed for function <a href="http://www.php.net/manual/en/function.file-get-contents.php">file_get_contents</a>)</li>
+<li><a href="http://developer.compete.com/">API Key from Compete.com</a></li>
+</ul>
+
+<h3>Installation</h3>
+<ol>
+<li>Download <a href="http://nothingoutoftheordinary.com/wp-content/uploads/2007/05/compete.zip">compete.zip</a> (<a href="http://nothingoutoftheordinary.com/wp-content/uploads/2007/05/compete.tar.gz">gz</a>)</li>
+<li>Extract and upload compete.php to the plugins/ directory</li>
+<li>Enable Compete Rankings in the Plugin admin panel</li>
+<li>In widget admin panel, place Compete in the sidebar, and edit it to enter your API Key</li>
+</ol>
+
+<h3>Features</h3>
+<ul>
+<li>Displays data about your site or any site you choose</li>
+<li>Edit nearly all aspects of it via widget admin</li>
+<li>Caching for large traffic sites</li>
+
+</ul>
+
+<h3>Editting display</h3>
+You can edit 'Widget Formatting' to change how the info is displayed. To access the variables, use this formatting: 
+<ul>
+<li><b>%rank%</b> - Rank of the site</li>
+<li><b>%icon%</b> - The icon relating to your traffic rank (large or small depending on options)</li>
+<li><b>%count%</b> - People count</li>
+<li><b>%host%</b> - Hostname used in lookup</li>
+<li><b>%link%</b> - Link to the compete page for the host</li>
+<li><b>%compete%</b> - The compete link - <span style="font-size: 75%"><a href="http://snapshot.compete.com">Compete.com</a></span></li>
+</ul>
+The default formatting is:
+<pre>
+&lt;span style="float:right;"&gt;&lt;img src="%icon%" alt="%rank%" /&gt;&lt;/span&gt;
+&lt;a href="%link%">%host%&lt;/a&gt;&lt;br /&gt;
+Ranking: %rank%&lt;br /&gt;
+People: %count%&lt;br /&gt;
+%compete%
+</pre>
+
+</body>
+</html>

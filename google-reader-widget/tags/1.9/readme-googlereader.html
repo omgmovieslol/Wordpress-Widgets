@@ -1,0 +1,86 @@
+
+<html>
+<head>
+<title>Google Reader WordPress Widget Readme</title>
+</head>
+
+<body>
+
+<h2>Google Reader WordPress Widget Readme</h2>
+<ul>
+<li>Author - James Wilson</li>
+<li>URL - <a href="http://nothingoutoftheordinary.com/2007/05/26/wordpress-google-reader-widget/">http://nothingoutoftheordinary.com/2007/05/26/wordpress-google-reader-widget/</a></li>
+<li>License - <a href="http://www.gnu.org/copyleft/gpl.html">GPL</a></li>
+</ul>
+<h3>Requirements</h3>
+<ul>
+<li>WordPress 2.2 or 2.0.x/2.1.x with <a href="http://automattic.com/code/widgets/">WordPress Widgets</a></li>
+<li>PHP 4.3.0 or greater (needed for function <a href="http://www.php.net/manual/en/function.file-get-contents.php">file_get_contents</a>)</li>
+<li><a href="#user-id">Your Google Reader User ID</a></li>
+</ul>
+
+<h3>Installation</h3>
+<ol>
+<li>Download <a href="http://nothingoutoftheordinary.com/wp-content/uploads/2007/05/googlereader.zip">googlereader.zip</a> (<a href="http://nothingoutoftheordinary.com/wp-content/uploads/2007/05/googlereader.tar.gz">gz</a>)</li>
+
+<li>Extract and upload googlereader.php to the plugins/ directory</li>
+<li>Enable Google Reader in the Plugin admin panel</li>
+<li>In widget admin panel, place Google Reader in the sidebar, and edit it to enter your <a href="#user-id">user id</a></li>
+</ol>
+
+<h3>Features</h3>
+<ul>
+<li>Displays your latest shared items from Google Reader</li>
+<li>Completely customizable display</li>
+<li>Caching for large traffic sites</li>
+</ul>
+
+<a name="user-id"></a><h3>User ID</h3>
+In order to get your shares, you need to know your user id according to Google Reader. This can be found by going to the 'Shared Items' link, and copying the 20 digit number at the end of your shared items link.
+
+So something like:
+<code>http://www.google.com/reader/shared/<b>02774557510273097991</b></code>
+Where <code>02774557510273097991</code> would be my user id.
+
+
+<h3>Formatting</h3>
+There are 3 parts needed to format the output.
+
+The first part, called items start in the admin panel, is the first part of the widget after the title. For the default formatting, this is just <code>&lt;ul&gt;</code>.
+
+The second part, called items end, is the ending of the widget. By default, this is:
+<code>&lt;/ul&gt;
+&lt;a href="%googlereader%" style="float:right;"&gt;Shared Items&lt;/a&gt;
+</code>
+
+The third part is what is called for each item. By default, this is:
+<code>&lt;li style="list-style-type: none;"&gt;&lt;a href="%link%"&gt;%title%&lt;/a&gt;&lt;/li&gt;</code>
+
+The premise of calling each value is this:
+<ol>
+<li>start</li>
+<li>item</li>
+<li>item</li>
+<li>...</li>
+<li>item</li>
+<li>end</li>
+</ol>
+
+The formatting for items is:
+<ul>
+<li><b>%link%</b> - Link to the item</li>
+<li><b>%title%</b> - Title of the item</li>
+<li><b>%site%</b> - The title of the site the item is from</li>
+<li><b>%sitelink%</b> - The link to the site the item is from</li>
+<li><b>%number%</b> - The number of the current item</li>
+<li><b>%comment%</b> - The comment (note) made when sharing an item</li>
+</ul>
+
+The formatting for start and end is:
+<ul>
+<li><b>%googlereader%</b> - Link to your Google Reader shared page</li>
+<li><b>%count%</b> - Number of items shown</li>
+</ul>
+
+</body>
+</html>

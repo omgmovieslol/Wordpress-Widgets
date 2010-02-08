@@ -1,0 +1,62 @@
+
+<html>
+<head>
+<title>Weather WordPress Widget Readme</title>
+</head>
+
+<body>
+
+<h2>Weather WordPress Widget Readme</h2>
+<ul>
+<li>Author - James Wilson</li>
+<li>URL - <a href="http://nothingoutoftheordinary.com/2007/05/29/wordpress-weather-widget/">http://nothingoutoftheordinary.com/2007/05/29/wordpress-weather-widget/</a></li>
+<li>License - <a href="http://www.gnu.org/copyleft/gpl.html">GPL</a></li>
+</ul>
+
+<h3>Requirements</h3>
+<ul>
+<li>WordPress 2.2 or 2.0.x/2.1.x with <a href="http://automattic.com/code/widgets/">WordPress Widgets</a></li>
+<li>PHP 4.3.0 or greater (needed for function <a href="http://www.php.net/manual/en/function.file-get-contents.php">file_get_contents</a>)</li>
+</ul>
+
+<h3>Installation</h3>
+<ol>
+<li>Download <a href="http://nothingoutoftheordinary.com/wp-content/uploads/2007/05/weather.zip">weather.zip</a> (<a href="http://nothingoutoftheordinary.com/wp-content/uploads/2007/05/weather.tar.gz">gz</a>)</li>
+<li>Extract and upload weather.php to the plugins/ directory</li>
+<li>Enable Weather Widget in the Plugin admin panel</li>
+<li>In widget admin panel, place Weather in the sidebar, and edit it to enter your location</li>
+</ol>
+
+<a name="location"></a>
+<h3>Location</h3>
+The location can either be a zip code for US users or the locid. To find the locid, you can do a search using <code>http://xoap.weather.com/search/search?where=<b>[search parameters]</b></code>.This will return an XML file with search results and their corresponding locid's.
+
+You can also find it out by the <a href="http://www.weather.com">Weather.com website</a>. After searching for and selecting your city, you will be sent to a url that will look something like, <code>http://www.weather.com/outlook/driving/interstate/local/<b>USTX0617</b>?from=search_city</code>, where <b>USTX0617</b> is the locid.
+
+<a name="image"></a>
+<h3>Image Hosting</h3>
+I've provided the images used and provided by weather.com with the archive. It is called weatherimages.tar.gz. If you want to host your own images, extract and upload the files, then, in the admin panel, edit the 'Image Location' field to point to your directory of images. Make sure to have the trailing slash.
+
+If you don't use your own images, you are free to use the ones that I've hosted, which are located at http://nothingoutoftheordinary.com/weatherimages/
+
+<h3>Editting display</h3>
+You can edit 'Widget Formatting' to change how the info is displayed. To access the variables, use this formatting: 
+<ul>
+<li><b>%loc%</b> - Location</li>
+<li><b>%temp%</b> - Current temperature</li>
+<li><b>%feels%</b> - Feels like temperature</li>
+<li><b>%icon%</b> - The icon referring to the current weather. This is just a number</li>
+<li><b>%iconhref%</b> - The location of the image with your set image location at the front</li>
+<li><b>%attribution%</b> - The link supposedly required to be displayed. <a href="http://www.weather.com/?prod=xoap&par=">Weather data provided by weather.com&reg;</a></li>
+</ul>
+The default formatting is:
+<code>
+&lt;img src="%iconhref%" alt="%cond%" style="float:right;" /&gt;
+%loc%&lt;br /&gt;
+&lt;span style="font-size: 150%;"&gt;%temp% &deg;F&lt;/span&gt;
+(%feels% &deg;F)&lt;br /&gt;
+&lt;span style="font-size: 65%; float: right;"&gt;%attribution%&lt;/a&gt;
+</code>
+
+</body>
+</html>
